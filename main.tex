@@ -127,7 +127,6 @@ You have been given a task to deploy a web application on AWS. The application i
     \item Create a bastion host (EC2 instance) to access resources in private subnet remotely.
         \begin{itemize}
             \item Name: Bastion
-            \item OS: Ubuntu 22.04 LTS (HVM)
             \item Subnet: public1
             \item Instance Type: t3a.micro
             \item Public IP Address: Enabled
@@ -136,15 +135,14 @@ You have been given a task to deploy a web application on AWS. The application i
         \end{itemize}
     \item Create an RDS database with the following specifications:
     \begin{itemize}
-        \item Aurora Serverless with PostgreSQL compatibility
-        \item Minimum ACU: 0.5
+        \item Aurora Serverless with PostgreSQL compatibility (version 10.18)
+        \item DB instance class: Serverless v1
+        \item Minimum ACU: 2
         \item Maximum ACU: 4
-        \item Multi-AZ deployment: True
         \item Network Subnet: private3 and private4
-        \item Performance Insights: Disabled
-        \item Enhanced Monitoring: Disabled
+        \item Enable scale the capacity to 0 ACUs when cluster is idle (00:05:00).
         \item Web Service Data API: Enabled
-        \item Note: Check section \ref{resources} to find create tables queries.
+        \item Note: Check section \ref{resources} to find create table queries.
     \end{itemize}
     \item Create a database credential on Secrets Manager and attach it to the database
     \item Create ElastiCache with the following specifications:
