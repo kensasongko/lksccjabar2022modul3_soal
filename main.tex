@@ -50,6 +50,7 @@ You have been given a task to deploy a web application on AWS. The application i
 \section{External Resources}\label{resources}
 \begin{enumerate}
     \item The repository URL for the project is \href{https://github.com/itsgitz/lks-jabar-2022-modul3}{https://github.com/itsgitz/lks-jabar-2022-modul3}
+    \item The queries used to create required tables for the project is located: \href{https://gist.github.com/itsgitz/4653491aa53747a0982ce6b781259514}{https://gist.github.com/itsgitz/4653491aa53747a0982ce6b781259514}
 \end{enumerate}
 
 \newpage
@@ -140,6 +141,10 @@ You have been given a task to deploy a web application on AWS. The application i
         \item Maximum ACU: 4
         \item Multi-AZ deployment: True
         \item Network Subnet: private3 and private4
+        \item Performance Insights: Disabled
+        \item Enhanced Monitoring: Disabled
+        \item Web Service Data API: Enabled
+        \item Note: Check section \ref{resources} to find create tables queries.
     \end{itemize}
     \item Create a database credential on Secrets Manager and attach it to the database
     \item Create ElastiCache with the following specifications:
